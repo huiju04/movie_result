@@ -9,7 +9,7 @@ export const GlobalStyled = createGlobalStyle`
     }
 
     body{
-        
+        text-align: center;
         letter-spacing: -1px;
         word-break: break-all;
         font-family: "Noto Sans KR", sans-serif;
