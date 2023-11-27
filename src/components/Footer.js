@@ -4,7 +4,8 @@ const Container = styled.div`
   width: 100%;
   height: 150px;
   background-color: #333;
-  position: absolute;
+  position: relative;
+  left: 0;
   bottom: 0;
   line-height: 150px;
   color: white;

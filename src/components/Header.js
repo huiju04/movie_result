@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const Header = () => {
   const Wrap = styled.div`
@@ -40,7 +42,7 @@ export const Header = () => {
             로그인
           </Link>
           <Link to={"/search"} style={{ color: "white" }}>
-            검색
+            <FontAwesomeIcon icon={faMagnifyingGlass} />
           </Link>
         </DivWrap>
       </Wrap>

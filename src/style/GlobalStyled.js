@@ -13,6 +13,7 @@ export const GlobalStyled = createGlobalStyle`
         letter-spacing: -1px;
         word-break: break-all;
         font-family: "Noto Sans KR", sans-serif;
+        background-color: lightgray;
     }
 
     ul, li{
