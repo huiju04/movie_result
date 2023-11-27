@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
 export const ShowMovie = () => {
-  const Wrap = styled.div``;
+  const Wrap = styled.div`
+    width: 100%;
+    height: 100%;
+    padding: 0 150px;
+  `;
   const InWrap = styled.div``;
   const Title = styled.div``;
   const Movie_Bg = styled.div``;
