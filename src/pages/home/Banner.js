@@ -1,46 +1,72 @@
 import styled from "styled-components";
-import { faPlay } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IMG_URL } from "../../constants";
+import { PlayBtn } from "../../button/PlayBtn";
 
-const Wrap = styled.div`
-  width: 100%;
-  height: 903.5px;
-  padding: 20px 150px;
-  text-align: left;
-  display: flex;
-  justify-content: space-between;
+const MainBanner = styled.section`
+  height: 80vh;
+  background-color: lightgray;
+  position: relative;
+  padding: 400px 5%;
+  background: url(${IMG_URL}/original/${(props) => props.$bgUrl}) no-repeat
+    center / cover;
+  h3,
+  p {
+    position: relative;
+    text-align: left;
+  }
+
+  h3 {
+    max-width: 650px;
+    width: 100%;
+    font-size: 83px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    letter-spacing: -3px;
+    line-height: 100px;
+  }
 
   p {
-    font-size: 20px;
+    max-width: 650px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    color: lightgray;
+  }
+
+  @media screen and (max-width: 450px) {
+    h3 {
+      font-size: 50px;
+      line-height: 65px;
+    }
+
+    p {
+      font-size: 16px;
+    }
   }
 `;
 
-const Title = styled.h3`
-  font-size: 90px;
-  font-weight: 700;
-  margin: 350px 0 50px 0;
+const BlackBg = styled.div`
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.8) 45%,
+    rgba(0, 0, 0, 0) 95%
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
 `;
 
-const Button = styled.button`
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: none;
-  font-size: 50px;
-  margin-top: 400px;
-`;
-
-export const Banner = () => {
+export const Banner = ({ data }) => {
   return (
-    <Wrap>
-      <div>
-        <Title>영화제목</Title>
-        <p>영화소개글</p>
-      </div>
-
-      <Button>
-        <FontAwesomeIcon icon={faPlay} />
-      </Button>
-    </Wrap>
+    <MainBanner $bgUrl={data.backdrop_path}>
+      <BlackBg />
+      <h3>{data.title}</h3>
+      <p>{data.overview.slice(0, 100) + "..."}</p>
+      <PlayBtn />
+    </MainBanner>
   );
 };

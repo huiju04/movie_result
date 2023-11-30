@@ -7,6 +7,7 @@ import { SignUp } from "./pages/SignUp";
 import { Login } from "./pages/Login";
 import { PageNotFound } from "./pages/PageNotFound";
 import { Footer } from "./components/Footer";
+import { TopBtn } from "./button/TopBtn";
 
 const Router = () => {
   return (
@@ -14,13 +15,14 @@ const Router = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/detail" element={<Detail />} />
+        <Route path="/detail/:id" element={<Detail />} />
         <Route path="/search" element={<Search />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
       <Footer />
+      <TopBtn />
     </BrowserRouter>
   );
 };

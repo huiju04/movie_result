@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { BackBtn } from "./BackBtn";
+import { ErrorMessage } from "../ErrorMessage";
+import { useForm } from "react-hook-form";
 
 const Wrap = styled.div`
   width: 530px;
@@ -11,6 +13,7 @@ const Wrap = styled.div`
   p {
     font-size: 17px;
     font-weight: 700;
+    color: #333;
   }
 `;
 
@@ -18,21 +21,7 @@ const Title = styled.div`
   font-size: 50px;
   font-weight: 700;
   padding: 40px;
-`;
-
-const InputWrap = styled.div`
-  width: 100%;
-  margin: 0 auto;
-  input {
-    width: 450px;
-    height: 50px;
-    border: 1px solid #dbdbdb;
-    margin-bottom: 15px;
-    font-size: 15px;
-    font-weight: 700;
-    padding: 10px;
-    color: gray;
-  }
+  color: #000;
 `;
 
 const Button = styled.button`
@@ -65,31 +54,87 @@ export const Separ = styled.div`
   }
 `;
 
+const Form = styled.form`
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+  margin-top: 5%;
+  padding: 60px 20px;
+  border-radius: 10px;
+  text-align: left;
+`;
+
+const Input = styled.input`
+  all: unset;
+  box-sizing: border-box;
+  width: 450px;
+  height: 50px;
+  border: 1px solid #dbdbdb;
+  margin-bottom: 20px;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 10px;
+  color: gray;
+`;
+
 export const Login = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const loginHandler = () => {};
+
   return (
     <>
       <BackBtn />
 
       <Wrap>
-        <Title>LOGIN</Title>
-        <InputWrap>
-          <input type="text" placeholder="아이디를 입력해주세요" />
-          <input type="password" placeholder="비밀번호를 입력해주세요" />
-        </InputWrap>
-        <Button>로그인</Button>
+        <Form onSubmit={handleSubmit(loginHandler)}>
+          <Title>LOGIN</Title>
 
-        <Separ>
-          <span></span>
-          <b>또는</b>
-          <span></span>
-        </Separ>
+          <Input
+            {...register("username", {
+              required: "아이디는 필수 입니다.",
+            })}
+            type="text"
+            placeholder="아이디를 입력해주세요"
+          />
+          <ErrorMessage text={errors?.username?.message} />
 
-        <p>
-          혹시 회원이 아니십니까?
-          <Link to={"/signup"} style={{ color: "#ba0000" }}>
-            <b> 회원가입</b>
-          </Link>
-        </p>
+          <Input
+            {...register("password", {
+              required: "비밀번호를 필수해주세요.",
+              minLength: {
+                value: 8,
+                message: "비밀번호는 최소 8자리 이상 입니다.",
+              },
+            })}
+            type="password"
+            placeholder="비밀번호를 입력해주세요"
+          />
+          <ErrorMessage text={errors?.password?.message} />
+
+          <Button>로그인</Button>
+
+          <Separ>
+            <span></span>
+            <b>또는</b>
+            <span></span>
+          </Separ>
+
+          <p>
+            혹시 회원이 아니십니까?
+            <Link to={"/signup"} style={{ color: "#ba0000" }}>
+              <b> 회원가입 &rarr;</b>
+            </Link>
+          </p>
+        </Form>
       </Wrap>
     </>
   );

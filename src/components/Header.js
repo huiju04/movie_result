@@ -7,7 +7,7 @@ export const Header = () => {
   const Wrap = styled.div`
     width: 100%;
     height: 100px;
-    background-color: #333;
+    background-color: black;
     display: flex;
     justify-content: space-between;
     padding: 0 150px;
@@ -15,7 +15,7 @@ export const Header = () => {
   `;
 
   const DivWrap = styled.div`
-    width: 150px;
+    width: 200px;
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -39,10 +39,10 @@ export const Header = () => {
 
         <DivWrap>
           <Link to={"/login"} style={{ color: "white" }}>
-            로그인
+            LOGIN
           </Link>
           <Link to={"/search"} style={{ color: "white" }}>
-            <FontAwesomeIcon icon={faMagnifyingGlass} />
+            SEARCH
           </Link>
         </DivWrap>
       </Wrap>

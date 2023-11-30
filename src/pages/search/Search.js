@@ -2,46 +2,120 @@ import { BackBtn } from "../BackBtn";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
+import { useForm } from "react-hook-form";
+import { movieSearch } from "../../api";
+import { useState } from "react";
+import { IMG_URL } from "../../constants";
+import { Link } from "react-router-dom";
 
 const Wrap = styled.div`
   width: 100%;
-  height: 100vh;
-  margin: 50px auto;
-  display: flex;
-  justify-content: space-between;
+
+  padding: 0 150px;
 `;
 
-const InputWrap = styled.div`
+const Form = styled.form`
   width: 1400px;
   height: 100px;
-  background-color: gray;
   line-height: 100px;
-  margin: 0 auto;
-  input {
-    width: 1137px;
-    height: 50px;
-    padding: 15px;
-    font-size: 20px;
-  }
+  margin: 20px auto;
 `;
+
+const Input = styled.input`
+  all: unset;
+  box-sizing: border-box;
+  width: 1137px;
+  height: 50px;
+  background-color: white;
+  color: gray;
+  padding: 15px;
+  font-size: 20px;
+  text-align: left;
+  padding-left: 90px;
+`;
+
 const Button = styled.button`
+  all: unset;
+  box-sizing: border-box;
   width: 50px;
   height: 50px;
   font-size: 20px;
   font-weight: 700;
+  position: relative;
+  top: 0;
+  left: 70px;
+  color: gray;
 `;
 
-export const Search = () => {
+const Layout = styled.div``;
+
+const ConWrap = styled.div`
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 20px;
+  row-gap: 40px;
+`;
+
+const Con = styled.div``;
+
+const Bg = styled.div`
+  height: 300px;
+  background: url(${IMG_URL}/w500/${(props) => props.$bgUrl}) no-repeat center;
+`;
+
+const MovieTitle = styled.h4`
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 17px;
+`;
+
+export const Search = (s) => {
+  const { register, handleSubmit } = useForm({
+    mode: "onSubmit",
+  });
+
+  const [term, setTerm] = useState();
+
+  const searchHandler = async (data) => {
+    const { search: keyword } = data;
+    try {
+      const { results } = await movieSearch(keyword);
+      setTerm(results);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  console.log(term);
   return (
     <>
       <BackBtn />
       <Wrap>
-        <InputWrap>
-          <input />
+        <Form onSubmit={handleSubmit(searchHandler)}>
           <Button>
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </Button>
-        </InputWrap>
+          <Input
+            {...register("search", {
+              required: "검색 내용을 입력해주세요.",
+            })}
+            type="text"
+            placeholder="찾으시는 영화 제목을 입력해주세요"
+          />
+        </Form>
+
+        <Layout>
+          {term && (
+            <ConWrap>
+              {term.map((data) => (
+                <Con key={data.id}>
+                  <Bg $bgUrl={data.poster_path} />
+                  <MovieTitle>{data.title}</MovieTitle>
+                </Con>
+              ))}
+            </ConWrap>
+          )}
+        </Layout>
       </Wrap>
     </>
   );

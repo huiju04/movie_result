@@ -14,7 +14,7 @@ export const BackBtn = () => {
   return (
     <Div>
       <Link to={-1}>
-        <FontAwesomeIcon icon={faArrowLeft} />
+        <FontAwesomeIcon icon={faArrowLeft} style={{ color: "#ba0000" }} />
       </Link>
     </Div>
   );
