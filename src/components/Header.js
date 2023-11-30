@@ -15,7 +15,6 @@ const Wrap = styled.div`
   justify-content: space-between;
   padding: 0 150px;
   line-height: 100px;
-  background-color: beige;
 `;
 
 const DivWrap = styled.div`
