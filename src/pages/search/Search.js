@@ -64,6 +64,7 @@ const Bg = styled.div`
 `;
 
 const MovieTitle = styled.h4`
+  color: #fff;
   margin: 20px 0;
   font-weight: 600;
   font-size: 17px;
