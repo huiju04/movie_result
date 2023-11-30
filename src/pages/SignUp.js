@@ -1,4 +1,4 @@
-import { BackBtn } from "./BackBtn";
+import { BackBtn } from "../button/BackBtn";
 import styled from "styled-components";
 import { ErrorMessage } from "../ErrorMessage";
 import { useForm } from "react-hook-form";
@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 const Wrap = styled.div`
   width: 530px;
   height: 100vh;
-  margin: 0 auto;
+  margin: 100px auto 0 auto;
   background-color: white;
   border: 1px solid #dbdbdb;
 `;

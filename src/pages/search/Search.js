@@ -1,4 +1,4 @@
-import { BackBtn } from "../BackBtn";
+import { BackBtn } from "../../button/BackBtn";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
@@ -6,12 +6,11 @@ import { useForm } from "react-hook-form";
 import { movieSearch } from "../../api";
 import { useState } from "react";
 import { IMG_URL } from "../../constants";
-import { Link } from "react-router-dom";
 
 const Wrap = styled.div`
   width: 100%;
-
   padding: 0 150px;
+  margin-top: 100px;
 `;
 
 const Form = styled.form`
@@ -52,7 +51,7 @@ const Layout = styled.div``;
 const ConWrap = styled.div`
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  column-gap: 20px;
+  column-gap: 10px;
   row-gap: 40px;
 `;
 
@@ -60,11 +59,11 @@ const Con = styled.div``;
 
 const Bg = styled.div`
   height: 300px;
-  background: url(${IMG_URL}/w500/${(props) => props.$bgUrl}) no-repeat center;
+  background: url(${IMG_URL}/w200/${(props) => props.$bgUrl}) no-repeat center;
 `;
 
 const MovieTitle = styled.h4`
-  margin-top: 20px;
+  margin: 20px 0;
   font-weight: 600;
   font-size: 17px;
 `;

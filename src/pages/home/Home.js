@@ -29,6 +29,8 @@ export const Home = () => {
         setUpData(upResults);
 
         setIsLoading(false);
+
+        console.log(nowResults[0]);
       } catch (error) {
         console.log("에러:" + error);
       }

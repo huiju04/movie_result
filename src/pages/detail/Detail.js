@@ -5,7 +5,7 @@ import { Loading } from "../../components/Logding";
 import styled from "styled-components";
 import { IMG_URL } from "../../constants";
 import { useScrollTop } from "../../lib/useScrollTop";
-import { BackBtn } from "../BackBtn";
+import { BackBtn } from "../../button/BackBtn";
 
 const Container = styled.div`
   padding: 100px 150px;

@@ -61,12 +61,13 @@ const BlackBg = styled.div`
 `;
 
 export const Banner = ({ data }) => {
+  console.log("banner data result =>" + data.id);
   return (
     <MainBanner $bgUrl={data.backdrop_path}>
       <BlackBg />
       <h3>{data.title}</h3>
       <p>{data.overview.slice(0, 100) + "..."}</p>
-      <PlayBtn />
+      <PlayBtn apiData={data} />
     </MainBanner>
   );
 };
