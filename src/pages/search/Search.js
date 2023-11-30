@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { movieSearch } from "../../api";
 import { useState } from "react";
 import { IMG_URL } from "../../constants";
+import { Link } from "react-router-dom";
 
 const Wrap = styled.div`
   width: 100%;
@@ -107,10 +108,12 @@ export const Search = (s) => {
           {term && (
             <ConWrap>
               {term.map((data) => (
-                <Con key={data.id}>
-                  <Bg $bgUrl={data.poster_path} />
-                  <MovieTitle>{data.title}</MovieTitle>
-                </Con>
+                <Link to={`/detail/${data.id}`}>
+                  <Con key={data.id}>
+                    <Bg $bgUrl={data.poster_path} />
+                    <MovieTitle>{data.title}</MovieTitle>
+                  </Con>
+                </Link>
               ))}
             </ConWrap>
           )}

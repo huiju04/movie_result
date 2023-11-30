@@ -15,10 +15,10 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-export const PlayBtn = () => {
+export const PlayBtn = ({ apiData }) => {
   return (
     <>
-      <Link to={"/detail/1075794"}>
+      <Link to={`/detail/${apiData.id}`}>
         <Button>
           <FontAwesomeIcon icon={faPlay} />
         </Button>
