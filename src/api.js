@@ -16,7 +16,7 @@ const options = {
 };
 
 export const nowPlaying = () =>
-  fetch(url("movie/now_playing"), options).then((res) => res.json()); //지금 상영 영화
+  fetch(url("movie/now_playing"), options).then((res) => res.json()); //현재 상영 영화
 
 export const popular = () =>
   fetch(url("movie/popular"), options).then((res) => res.json()); //인기영화

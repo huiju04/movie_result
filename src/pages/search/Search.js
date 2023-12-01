@@ -70,7 +70,7 @@ const MovieTitle = styled.h4`
   font-size: 17px;
 `;
 
-export const Search = (s) => {
+export const Search = () => {
   const { register, handleSubmit } = useForm({
     mode: "onSubmit",
   });

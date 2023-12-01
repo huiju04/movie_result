@@ -61,7 +61,6 @@ const BlackBg = styled.div`
 `;
 
 export const Banner = ({ data }) => {
-  console.log("banner data result =>" + data.id);
   return (
     <MainBanner $bgUrl={data.backdrop_path}>
       <BlackBg />
