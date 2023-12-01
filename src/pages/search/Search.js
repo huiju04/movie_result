@@ -24,7 +24,6 @@ const Form = styled.form`
 const Input = styled.input`
   all: unset;
   box-sizing: border-box;
-  min-width: 550px;
   width: 1137px;
   height: 50px;
   background-color: white;

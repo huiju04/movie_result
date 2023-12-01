@@ -5,7 +5,6 @@ import styled from "styled-components";
 
 const Div = styled.div`
   text-align: left;
-  /* margin: 20px 0 0 50px; */
   font-size: 25px;
   padding: 50px;
   position: absolute;

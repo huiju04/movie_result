@@ -15,6 +15,11 @@ const Wrap = styled.div`
   justify-content: space-between;
   padding: 0 150px;
   line-height: 100px;
+  @media screen and (max-width: 450px) {
+    span {
+      opacity: 0;
+    }
+  }
 `;
 
 const DivWrap = styled.div`
@@ -22,10 +27,17 @@ const DivWrap = styled.div`
   height: 100%;
   display: flex;
   justify-content: space-between;
-  font-size: 20px;
   font-weight: 600;
+
   p {
     font-size: 20px;
+  }
+
+  @media screen and (max-width: 450px) {
+    p {
+      width: 100px;
+      font-size: 16px;
+    }
   }
 `;
 
@@ -62,7 +74,7 @@ export const Header = () => {
           }}
         >
           <FontAwesomeIcon icon={faFilm} />
-          Movie
+          <span>Movie</span>
         </Link>
 
         <DivWrap>
