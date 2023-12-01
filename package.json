@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "homepage": "https://github.com/huiju04/huiju04.github.io/home",
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-brands-svg-icons": "^6.4.2",
     "@fortawesome/free-regular-svg-icons": "^6.4.2",
@@ -23,8 +24,7 @@
     "styled-components": "^6.1.1",
     "styled-reset": "^4.5.1",
     "swiper": "^11.0.5",
-    "web-vitals": "^2.1.4",
-    "homepage": "https://github.com/huiju04/huiju04.github.io"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
