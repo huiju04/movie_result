@@ -49,7 +49,7 @@ export const Header = () => {
 
     if (pageY > 100) {
       headreRef.current.style.position = "fixed";
-      headreRef.current.style.backgroundColor = "rgb(186, 0, 0, 0.5)";
+      headreRef.current.style.backgroundColor = "rgb(64, 2, 2, 0.7)";
       headreRef.current.style.backdropFilter = "blur(10px)";
     } else {
       headreRef.current.style.position = "absolute";

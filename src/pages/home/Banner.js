@@ -13,6 +13,8 @@ const MainBanner = styled.section`
   p {
     position: relative;
     text-align: left;
+    top: 0;
+    left: 50px;
   }
 
   h3 {
