@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { faFilm } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useRef } from "react";
 
@@ -13,7 +14,7 @@ const Wrap = styled.div`
   left: 0;
   z-index: 10;
   justify-content: space-between;
-  padding: 0 150px;
+  padding: 0 5%;
   line-height: 100px;
   @media screen and (max-width: 450px) {
     span {
@@ -49,7 +50,7 @@ export const Header = () => {
 
     if (pageY > 100) {
       headreRef.current.style.position = "fixed";
-      headreRef.current.style.backgroundColor = "rgb(64, 2, 2, 0.7)";
+      headreRef.current.style.backgroundColor = "rgb(38, 0, 0, 0.7)";
       headreRef.current.style.backdropFilter = "blur(10px)";
     } else {
       headreRef.current.style.position = "absolute";
@@ -78,12 +79,12 @@ export const Header = () => {
         </Link>
 
         <DivWrap>
-          <Link to={"/login"} style={{ color: "white" }}>
-            <p>LOGIN</p>
+          <Link to={"/search"} style={{ color: "white" }}>
+            <FontAwesomeIcon icon={faMagnifyingGlass} />
           </Link>
 
-          <Link to={"/search"} style={{ color: "white" }}>
-            <p>SEARCH</p>
+          <Link to={"/signup"} style={{ color: "white" }}>
+            <p>SIGN UP</p>
           </Link>
         </DivWrap>
       </Wrap>

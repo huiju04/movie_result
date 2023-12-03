@@ -4,15 +4,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
 const Button = styled.button`
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   border: none;
-  font-size: 50px;
-  position: absolute;
-  bottom: 250px;
-  right: 145px;
+  font-size: 40px;
+  line-height: 80px;
+  position:absolute;
+  bottom: 300px;
+  right: 100px;
   cursor: pointer;
+  
 `;
 
 export const PlayBtn = ({ apiData }) => {

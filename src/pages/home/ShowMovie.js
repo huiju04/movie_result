@@ -11,23 +11,43 @@ const Container = styled.section`
 `;
 
 const Title = styled.h3`
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 700;
   margin-bottom: 50px;
-  @media screen and (max-width: 450px) {
-    font-size: 30px;
-    margin-bottom: 30px;
+  @media screen and (max-width: 650px) {
+      margin-bottom: 30px;
+      font-size: 30px;
+  }
+
+  @media screen and (max-width: 320px) {
+    
   }
 `;
 
 const CoverBg = styled.div`
-  height: 450px;
+  height: 500px;
   background: url(${IMG_URL}/w400/${(props) => props.$bgUrl}) no-repeat center /
     cover;
   border-radius: 5px;
   margin-bottom: 20px;
-  @media screen and (max-width: 450px) {
-    height: 150px;
+
+  @media screen and (max-width: 1500) {
+    height: 300px;
+    margin-bottom: 15px;
+  }
+
+  @media screen and (max-width: 1024) {
+    height: 300px;
+    margin-bottom: 15px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    height: 250px;
+    margin-bottom: 15px;
+  }
+
+  @media screen and (max-width: 640px) {
+    height: 200px;
     margin-bottom: 15px;
   }
 `;
@@ -51,11 +71,11 @@ const params = {
     },
     640: {
       spaceBetween: 15,
-      slidesPerView: 3.5,
+      slidesPerView: 4.5,
     },
     320: {
       spaceBetween: 10,
-      slidesPerView: 2.5,
+      slidesPerView: 3.5,
     },
   },
 };

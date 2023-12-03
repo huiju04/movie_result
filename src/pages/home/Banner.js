@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { IMG_URL } from "../../constants";
 import { PlayBtn } from "../../button/PlayBtn";
+import { Modal } from "../../components/Modal";
 
 const MainBanner = styled.section`
   height: 80vh;
-  background-color: lightgray;
   position: relative;
   padding: 400px 5%;
   background: url(${IMG_URL}/original/${(props) => props.$bgUrl}) no-repeat
@@ -13,8 +13,6 @@ const MainBanner = styled.section`
   p {
     position: relative;
     text-align: left;
-    top: 0;
-    left: 50px;
   }
 
   h3 {
@@ -36,14 +34,15 @@ const MainBanner = styled.section`
     color: lightgray;
   }
 
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 550px) {
     h3 {
-      font-size: 50px;
+      font-size: 60px;
       line-height: 65px;
+      margin-top: 30px;
     }
 
     p {
-      font-size: 16px;
+      font-size: 18px;
     }
   }
 `;
@@ -62,13 +61,16 @@ const BlackBg = styled.div`
   left: 0;
 `;
 
+
+
 export const Banner = ({ data }) => {
   return (
     <MainBanner $bgUrl={data.backdrop_path}>
       <BlackBg />
       <h3>{data.title}</h3>
       <p>{data.overview.slice(0, 100) + "..."}</p>
-      <PlayBtn apiData={data} />
+      <PlayBtn apiData={data}/>
+     
     </MainBanner>
   );
 };

@@ -35,25 +35,6 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-export const Separ = styled.div`
-  width: 100%;
-  margin: 30px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  span {
-    display: block;
-    width: 40%;
-    height: 1px;
-    background-color: #dbdbdb;
-  }
-  b {
-    font-size: 15px;
-    font-weight: 800;
-    color: #555;
-  }
-`;
-
 const Form = styled.form`
   width: 100%;
   margin: 0 auto;
@@ -121,19 +102,6 @@ export const Login = () => {
           <ErrorMessage text={errors?.password?.message} />
 
           <Button>로그인</Button>
-
-          <Separ>
-            <span></span>
-            <b>또는</b>
-            <span></span>
-          </Separ>
-
-          <p>
-            혹시 회원이 아니십니까?
-            <Link to={"/signup"} style={{ color: "#ba0000" }}>
-              <b> 회원가입 &rarr;</b>
-            </Link>
-          </p>
         </Form>
       </Wrap>
     </>

@@ -2,6 +2,7 @@ import { BackBtn } from "../button/BackBtn";
 import styled from "styled-components";
 import { ErrorMessage } from "../ErrorMessage";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 const Wrap = styled.div`
   width: 530px;
@@ -54,6 +55,25 @@ const Input = styled.input`
   font-weight: 700;
   padding: 10px;
   color: gray;
+`;
+
+export const Separ = styled.div`
+  width: 100%;
+  margin: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  span {
+    display: block;
+    width: 40%;
+    height: 1px;
+    background-color: #dbdbdb;
+  }
+  b {
+    font-size: 15px;
+    font-weight: 800;
+    color: #555;
+  }
 `;
 
 export const SignUp = () => {
@@ -125,6 +145,19 @@ export const SignUp = () => {
           <ErrorMessage text={errors?.email?.message} />
 
           <Button>회원가입</Button>
+
+          <Separ>
+            <span></span>
+            <b>또는</b>
+            <span></span>
+          </Separ>
+
+          <p>
+            혹시 회원이 아니십니까?
+            <Link to={"/login"} style={{ color: "#ba0000" }}>
+              <b> 로그인 &rarr;</b>
+            </Link>
+          </p>
         </Form>
       </Wrap>
     </>
