@@ -9,6 +9,9 @@ const Div = styled.div`
   padding: 50px;
   position: absolute;
   top: 70px;
+  @media screen and (max-width: 550px) {
+    display: none;
+  }
 `;
 
 export const BackBtn = () => {

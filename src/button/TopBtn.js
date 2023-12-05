@@ -11,6 +11,9 @@ const A = styled.a`
   bottom: 50px;
   right: 30px;
   z-index: 10;
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
 `;
 
 export const TopBtn = () => {

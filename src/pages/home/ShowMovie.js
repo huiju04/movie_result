@@ -15,12 +15,8 @@ const Title = styled.h3`
   font-weight: 700;
   margin-bottom: 50px;
   @media screen and (max-width: 650px) {
-      margin-bottom: 30px;
-      font-size: 30px;
-  }
-
-  @media screen and (max-width: 320px) {
-    
+    margin-bottom: 30px;
+    font-size: 30px;
   }
 `;
 

@@ -10,6 +10,11 @@ const Wrap = styled.div`
   margin: 100px auto 0 auto;
   background-color: white;
   border: 1px solid #dbdbdb;
+  p {
+    font-size: 17px;
+    font-weight: 700;
+    color: #333;
+  }
 `;
 
 const Title = styled.div`
@@ -155,7 +160,7 @@ export const SignUp = () => {
           <p>
             혹시 회원이 아니십니까?
             <Link to={"/login"} style={{ color: "#ba0000" }}>
-              <b> 로그인 &rarr;</b>
+              <b> 로그인 </b>
             </Link>
           </p>
         </Form>
