@@ -11,13 +11,11 @@ const Container = styled.section`
 `;
 
 const Title = styled.h3`
-  width: 370px;
   font-size: 40px;
   font-weight: 700;
   margin-bottom: 50px;
-  border-bottom: 4px solid #ba0000;
+  border-bottom: 2px solid rgb(184, 2, 2);
   padding: 20px;
-  text-align: center;
   @media screen and (max-width: 650px) {
     margin-bottom: 30px;
     font-size: 30px;
