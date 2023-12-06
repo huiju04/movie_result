@@ -10,13 +10,13 @@ const MainBanner = styled.section`
     center / cover;
   h3,
   p {
+    max-width: 650px;
+    width: 100%;
     position: relative;
     text-align: left;
   }
 
   h3 {
-    max-width: 650px;
-    width: 100%;
     font-size: 83px;
     font-weight: 700;
     margin-bottom: 25px;
@@ -25,8 +25,6 @@ const MainBanner = styled.section`
   }
 
   p {
-    max-width: 650px;
-    width: 100%;
     font-size: 18px;
     font-weight: 400;
     line-height: 27px;
