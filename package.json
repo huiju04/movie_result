@@ -24,7 +24,7 @@
     "styled-reset": "^4.5.1",
     "swiper": "^11.0.5",
     "web-vitals": "^2.1.4",
-    "homepage": "https://github.com/huiju04/huiju04.github.io"
+    "homepage": "https://huiju04.github.io/movie_result/"
   },
   "scripts": {
     "start": "react-scripts start",
