@@ -11,9 +11,13 @@ const Container = styled.section`
 `;
 
 const Title = styled.h3`
+  width: 370px;
   font-size: 40px;
   font-weight: 700;
   margin-bottom: 50px;
+  border-bottom: 4px solid #ba0000;
+  padding: 20px;
+  text-align: center;
   @media screen and (max-width: 650px) {
     margin-bottom: 30px;
     font-size: 30px;
@@ -24,15 +28,9 @@ const CoverBg = styled.div`
   height: 500px;
   background: url(${IMG_URL}/w400/${(props) => props.$bgUrl}) no-repeat center /
     cover;
-  border-radius: 5px;
   margin-bottom: 20px;
 
   @media screen and (max-width: 1500) {
-    height: 300px;
-    margin-bottom: 15px;
-  }
-
-  @media screen and (max-width: 1024) {
     height: 300px;
     margin-bottom: 15px;
   }
@@ -49,11 +47,11 @@ const CoverBg = styled.div`
 `;
 
 const MovieTitle = styled.h4`
-  font-size: 18px;
+  font-size: 110%;
   text-align: center;
-  @media screen and (max-width: 450px) {
-    font-size: 16px;
-    line-height: 22px;
+
+  p {
+    opacity: 0.6;
   }
 `;
 
@@ -86,7 +84,11 @@ export const ShowMovie = ({ titleName, movieData }) => {
           <SwiperSlide key={data.id}>
             <Link to={`/detail/${data.id}`}>
               <CoverBg $bgUrl={data.poster_path} />
-              <MovieTitle>{data.title}</MovieTitle>
+              <MovieTitle>
+                {data.title}
+                <br />
+                <p>{Math.round(data.vote_average)}점</p>
+              </MovieTitle>
             </Link>
           </SwiperSlide>
         ))}

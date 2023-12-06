@@ -10,6 +10,9 @@ const Wrap = styled.div`
   margin: 100px auto 0 auto;
   background-color: white;
   border: 1px solid #dbdbdb;
+  @media screen and (max-width: 1020px) {
+    width: 450px;
+  }
 `;
 
 const Title = styled.div`
@@ -28,6 +31,9 @@ const Button = styled.button`
   border: 1px solid #ba0000;
   background-color: #ba0000;
   cursor: pointer;
+  @media screen and (max-width: 1020px) {
+    width: 400px;
+  }
 `;
 
 const Form = styled.form`
@@ -55,6 +61,9 @@ const Input = styled.input`
   font-weight: 700;
   padding: 10px;
   color: gray;
+  @media screen and (max-width: 1020px) {
+    width: 400px;
+  }
 `;
 
 export const Login = () => {

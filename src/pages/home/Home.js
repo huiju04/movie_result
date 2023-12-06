@@ -45,17 +45,19 @@ export const Home = () => {
         <div>
           {nowPlayingData && (
             <>
-              <Banner data={nowPlayingData[0]} />
+              <Banner data={popData[0]} />
 
               <Layout>
                 <ShowMovie
                   titleName={"현재 상영 영화"}
                   movieData={nowPlayingData}
                 />
+
                 <ShowMovie titleName={"개봉 예정 영화"} movieData={upData} />
+
                 <ShowMovie titleName={"인기 영화"} movieData={popData} />
 
-                <ShowMovie titleName={"평점이 높은"} movieData={topData} />
+                <ShowMovie titleName={"평점이 높은 영화"} movieData={topData} />
               </Layout>
             </>
           )}

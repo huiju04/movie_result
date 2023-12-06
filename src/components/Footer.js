@@ -12,5 +12,11 @@ const Container = styled.div`
 `;
 
 export const Footer = () => {
-  return <Container>&copy; Movie 2023/11</Container>;
+  return (
+    <>
+      <Container>
+        <p>&copy; Copyright 2023. MOVIE. All Rights Reserved.</p>
+      </Container>
+    </>
+  );
 };

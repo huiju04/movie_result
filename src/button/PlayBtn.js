@@ -7,14 +7,15 @@ const Button = styled.button`
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  border: none;
-  font-size: 40px;
-  line-height: 80px;
-  position:absolute;
+  border: 10px solid rgb(0, 0, 0, 0.7);
+  padding-left: 9px;
+  font-size: 25px;
+  line-height: 50px;
+  color: #ba0000;
+  position: absolute;
   bottom: 300px;
   right: 100px;
   cursor: pointer;
-  
 `;
 
 export const PlayBtn = ({ apiData }) => {

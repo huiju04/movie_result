@@ -41,31 +41,19 @@ const Con = styled.div`
 
 const Title = styled.h3`
   text-align: left;
-  font-size: 60px;
+  font-size: 200%;
   font-weight: 700;
   margin-bottom: 30px;
   background-color: white;
-  padding: 5px;
+  padding: 5px 20px;
   color: #000;
-  @media screen and (max-width: 1020px) {
-    font-size: 45px;
-  }
-  @media screen and (max-width: 600px) {
-    font-size: 30px;
-  }
 
   p {
     margin-top: 10px;
-    font-size: 18px;
+    font-size: 50%;
     opacity: 0.6;
     padding: 0 0 20px 0;
     border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-    @media screen and (max-width: 1020px) {
-      font-size: 14px;
-    }
-    @media screen and (max-width: 600px) {
-      font-size: 16px;
-    }
   }
 `;
 
@@ -88,18 +76,19 @@ const Release = styled.div`
 `;
 
 const Runtime = styled.div`
-  margin-top: 10px;
+  padding-bottom: 20px;
 `;
 
 const Desc = styled.p`
   max-width: 70%;
   width: 100%;
-  padding-top: 30px;
+  padding-top: 10px;
   opacity: 0.7;
   line-height: 2em;
   font-weight: 300;
+  border-top: 5px solid #ba0000;
 
-  @media screen and (max-width: 1020px) {
+  @media screen and (max-width: 1500px) {
     max-width: 100%;
     font-size: 18px;
   }

@@ -19,21 +19,28 @@ const Wrap = styled.div`
 `;
 
 const DivWrap = styled.div`
-  width: 200px;
+  width: 170px;
   height: 100%;
   display: flex;
   justify-content: space-between;
   font-weight: 600;
 
   p {
-    font-size: 20px;
+    font-size: 18px;
   }
 
-  @media screen and (max-width: 550px) {
+  @media screen and (max-width: 1020px) {
     width: 150px;
 
     p {
-      width: 100px;
+      font-size: 17px;
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    width: 100px;
+
+    p {
       font-size: 16px;
     }
   }
@@ -77,7 +84,9 @@ export const Header = () => {
 
         <DivWrap>
           <Link to={"/search"} style={{ color: "white" }}>
-            <FontAwesomeIcon icon={faMagnifyingGlass} />
+            <p>
+              <FontAwesomeIcon icon={faMagnifyingGlass} />
+            </p>
           </Link>
 
           <Link to={"/signup"} style={{ color: "white" }}>

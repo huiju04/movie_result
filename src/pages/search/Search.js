@@ -1,59 +1,67 @@
-import { BackBtn } from "../../button/BackBtn";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
+import { BackBtn } from "../../button/BackBtn";
 import { useForm } from "react-hook-form";
-import { movieSearch } from "../../api";
 import { useState } from "react";
+import { movieSearch } from "../../api";
 import { IMG_URL } from "../../constants";
 import { Link } from "react-router-dom";
 
 const Wrap = styled.div`
   width: 100%;
-  padding: 0 150px;
-  margin-top: 100px;
+  padding: 0 100px;
+  margin-top: 120px;
+  @media screen and (max-width: 1020px) {
+    padding: 0 50px;
+  }
 `;
 
 const Form = styled.form`
-  width: 1400px;
-  height: 100px;
-  line-height: 100px;
-  margin: 20px auto;
+  margin: 0 auto;
 `;
 
 const Input = styled.input`
   all: unset;
   box-sizing: border-box;
-  width: 1137px;
+  width: 1000px;
   height: 50px;
   background-color: white;
   color: gray;
-  padding: 15px;
+  padding: 10px 0 10px 50px;
   font-size: 20px;
   text-align: left;
-  padding-left: 90px;
+  margin-bottom: 50px;
+  @media screen and (max-width: 1020px) {
+    width: 700px;
+    font-size: 18px;
+  }
+  @media screen and (max-width: 550px) {
+    width: 400px;
+    font-size: 16px;
+  }
 `;
 
-const Button = styled.button`
-  all: unset;
-  box-sizing: border-box;
-  width: 50px;
-  height: 50px;
-  font-size: 20px;
-  font-weight: 700;
-  position: relative;
-  top: 0;
-  left: 70px;
-  color: gray;
+const Layout = styled.div`
+  width: 100%;
+  @media screen and (max-width: 1020px) {
+    width: 870px;
+  }
+  @media screen and (max-width: 550px) {
+    width: 400px;
+  }
 `;
-
-const Layout = styled.div``;
 
 const ConWrap = styled.div`
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   column-gap: 10px;
   row-gap: 40px;
+  @media screen and (max-width: 1020px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  @media screen and (max-width: 550px) {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+  }
 `;
 
 const Con = styled.div``;
@@ -61,6 +69,12 @@ const Con = styled.div``;
 const Bg = styled.div`
   height: 300px;
   background: url(${IMG_URL}/w200/${(props) => props.$bgUrl}) no-repeat center;
+  @media screen and (max-width: 1020px) {
+    height: 250px;
+  }
+  @media screen and (max-width: 550px) {
+    height: 300px;
+  }
 `;
 
 const MovieTitle = styled.h4`
@@ -68,6 +82,9 @@ const MovieTitle = styled.h4`
   margin: 20px 0;
   font-weight: 600;
   font-size: 17px;
+  @media screen and (max-width: 1020px) {
+    font-size: 16px;
+  }
 `;
 
 export const Search = () => {
@@ -93,9 +110,6 @@ export const Search = () => {
       <BackBtn />
       <Wrap>
         <Form onSubmit={handleSubmit(searchHandler)}>
-          <Button>
-            <FontAwesomeIcon icon={faMagnifyingGlass} />
-          </Button>
           <Input
             {...register("search", {
               required: "검색 내용을 입력해주세요.",

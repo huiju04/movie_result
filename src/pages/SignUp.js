@@ -15,6 +15,9 @@ const Wrap = styled.div`
     font-weight: 700;
     color: #333;
   }
+  @media screen and (max-width: 1020px) {
+    width: 450px;
+  }
 `;
 
 const Title = styled.div`
@@ -28,11 +31,14 @@ const Button = styled.button`
   width: 450px;
   height: 50px;
   margin-top: 20px;
-  font-size: 23px;
+  font-size: 26px;
   color: white;
   border: 1px solid #ba0000;
   background-color: #ba0000;
   cursor: pointer;
+  @media screen and (max-width: 1020px) {
+    width: 400px;
+  }
 `;
 
 const Form = styled.form`
@@ -60,9 +66,12 @@ const Input = styled.input`
   font-weight: 700;
   padding: 10px;
   color: gray;
+  @media screen and (max-width: 1020px) {
+    width: 400px;
+  }
 `;
 
-export const Separ = styled.div`
+const Separ = styled.div`
   width: 100%;
   margin: 30px 0;
   display: flex;

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { IMG_URL } from "../../constants";
 import { PlayBtn } from "../../button/PlayBtn";
-import { Modal } from "../../components/Modal";
 
 const MainBanner = styled.section`
   height: 80vh;
@@ -53,7 +52,7 @@ const BlackBg = styled.div`
   background: linear-gradient(
     0deg,
     rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0.8) 45%,
+    rgba(0, 0, 0, 0.8) 35%,
     rgba(0, 0, 0, 0) 95%
   );
   position: absolute;
@@ -61,16 +60,13 @@ const BlackBg = styled.div`
   left: 0;
 `;
 
-
-
 export const Banner = ({ data }) => {
   return (
     <MainBanner $bgUrl={data.backdrop_path}>
       <BlackBg />
       <h3>{data.title}</h3>
       <p>{data.overview.slice(0, 100) + "..."}</p>
-      <PlayBtn apiData={data}/>
-     
+      <PlayBtn apiData={data} />
     </MainBanner>
   );
 };
